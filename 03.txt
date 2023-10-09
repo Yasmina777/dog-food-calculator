@@ -1,0 +1,33 @@
+
+required_food = int(input())
+
+
+total_food_eaten = 0
+
+
+while True:
+    food_eaten_per_day = input()
+    if food_eaten_per_day == "STOP":
+        break
+    food_eaten_per_day = int(food_eaten_per_day)
+    total_food_eaten += food_eaten_per_day
+
+
+total_food_eaten_kg = total_food_eaten / 1000
+
+
+food_difference = abs(required_food - total_food_eaten_kg)
+
+
+money_spent = total_food_eaten_kg * 5.50
+
+
+if total_food_eaten_kg >= required_food:
+    leftovers = food_difference * 1000
+    print(f"Food is enough! Leftovers: {leftovers:.2f} grams.")
+else:
+    needed_food = food_difference * 1000
+    print(f"Food is not enough. You need {needed_food:.2f} grams more.")
+
+
+print(f"So you spent {money_spent:.2f} leva for food.")
